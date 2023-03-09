@@ -74,25 +74,33 @@ import css from "./css/Sidebar.module.css"
     //     }
     // }
 
+    // updateClick(){
+    //     if (this.state.possession == "My"){
+    //         this.setState({
+    //             possession:"Yours",
+    //         });
+    //     }else {
+    //         this.setState({
+    //             possession:"My",
+    //         });
+    //     }
+    // }
+
 //     updateClick(){
-//         if (this.state.possession == "My"){
 //             this.setState({
-//                 possession:"Yours",
-//             });
-//         }else {
-//             this.setState({
-//                 possession:"My",
+//                 possession: this.state.possession === "Yours" ? "My" : "Yours",
 //             });
 //         }
-//     }
+    
     
 //     render () {
-//      return (<div className = {css.sidebar}>
-//         <a href="#.">{this.state.possession} {this.props.anchorOne}</a>
-//         <a href="#.">{this.state.possession} {this.props.anchorTwo}</a>
-//         <a href="#.">My Paintings</a>
-//         <button onClick={() => this.updateClick()}>{this.state.buttonText}</button>
-//         </div>);
+//         return (
+//             <div className = {css.sidebar}>
+//                 <a href="#.">{this.state.possession} {this.props.anchorOne}</a>
+//                 <a href="#.">{this.state.possession} {this.props.anchorTwo}</a>
+//                 <a href="#.">My Paintings</a>
+//                 <button onClick={() => this.updateClick()}>{this.state.buttonText}</button>
+//             </div>);
 //     }
 // }
 
@@ -101,6 +109,85 @@ import css from "./css/Sidebar.module.css"
 
 // PART 5 with call back logs
 
+// class SidebarClass extends React.Component{
+    
+//     constructor(props){
+//         super(props);
+//         this.state = {
+//             possession: "My",
+//             buttonText: "Exit",
+//             // clickCounter: 0,
+//         }
+//     }
+
+//     updateClick(){
+//         this.setState({
+//             possession: this.state.possession === "Yours" ? "My" : "Yours",
+//         }, () => console.log("state after: " +this.state.possession));
+//         console.log("state before: " +this.state.possession);
+//     }
+    
+
+//     render () {
+//         return (
+//             <div className = {css.sidebar}>
+//                 <a href="#.">{this.state.possession} {this.props.anchorOne}</a>
+//                 <a href="#.">{this.state.possession} {this.props.anchorTwo}</a>
+//                 <a href="#.">My Paintings</a>
+//                 <button onClick={() => this.updateClick()}>{this.state.buttonText}</button>
+//             </div>);
+//         }
+// }
+
+
+
+// export default SidebarClass;
+
+// Part 6 with increment counter
+
+// class SidebarClass extends React.Component{
+    
+//     constructor(props){
+//         super(props);
+//         this.state = {
+//             possession: "My",
+//             buttonText: "Exit",
+//             count: 0,
+//         }
+//     }
+
+//     updateClick(){
+//         this.setState({
+//             possession: this.state.possession === "Yours" ? "My" : "Yours",
+//         }, () => console.log("state after: " +this.state.possession));
+//         console.log("state before: " +this.state.possession);
+//     }
+
+//     incrementCount(){
+//         this.setState({
+//             count: this.state.count + 1,
+//         }, () => console.log("count after:" + this.state.count))
+//     }
+    
+
+//     render () {
+//         return (
+//             <div className = {css.sidebar}>
+//                 <a href="#.">{this.state.possession} {this.props.anchorOne}</a>
+//                 <a href="#.">{this.state.possession} {this.props.anchorTwo}</a>
+//                 <a href="#.">My Paintings</a>
+//                 <button onClick={() => {this.updateClick(); this.incrementCount();}}>{this.state.buttonText}</button>
+//             </div>);
+//         }
+// }
+
+
+
+// export default SidebarClass;
+
+
+// Part 6 with prevState and prevProps
+
 class SidebarClass extends React.Component{
     
     constructor(props){
@@ -108,35 +195,36 @@ class SidebarClass extends React.Component{
         this.state = {
             possession: "My",
             buttonText: "Exit",
-            // clickCounter: 0,
+            count: 0,
         }
     }
 
     updateClick(){
-        if (this.state.possession === "My"){
-            this.setState({
-                possession:"Yours",
-            }, () => console.log("state after: " +this.state.possession));
-        }else {
-            this.setState({
-                possession:"My",
-            }, () => {
-                console.log("state after: " +this.state.possession)
-            });
-        }
-        console.log("state before: " +this.state.possession);
+        this.setState((prevState, prevProps) => {
+            console.log("state before: " +prevState.possession);
+            return {
+                possession: prevState.possession === "Yours" ? "My" : "Yours",
+            }
+        }, () => console.log("state after: " + this.state.possession))
     }
 
+    incrementCount(){
+        this.setState((prevState, prevProps) => {
+            return {
+                count : prevState.count + 1
+            }
+        }, () => console.log("count after:" + this.state.count))
+    }
+    
     render () {
         return (
             <div className = {css.sidebar}>
                 <a href="#.">{this.state.possession} {this.props.anchorOne}</a>
                 <a href="#.">{this.state.possession} {this.props.anchorTwo}</a>
                 <a href="#.">My Paintings</a>
-                <button onClick={() => this.updateClick()}>{this.state.buttonText}</button>
+                <button onClick={() => {this.updateClick(); this.incrementCount();}}>{this.state.buttonText}</button>
             </div>);
         }
 }
 
-
-export default SidebarClass
+export default SidebarClass;
