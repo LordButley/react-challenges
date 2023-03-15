@@ -24,8 +24,6 @@ class NavBarSimple extends React.Component{
         })
     }
 
-
-
     render(){
         console.log(this.state);
         return(
@@ -40,7 +38,6 @@ class NavBarSimple extends React.Component{
                 </div>
             </h1>
         )
-        
     }
 }
 

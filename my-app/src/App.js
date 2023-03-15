@@ -1,19 +1,24 @@
 import css from './App.module.css';
-// import Sidebar from './components/Sidebar';
-// import SidebarClass from './components/SidebarClass';
-import NavBarSimple from './components/NavBarSimple';
+import NavBarForm from './components/NavBarForm';
 
 function App() {
   return (
-    <div className={css.App}>
+    <div className={css.NavBar}>
+     {/* <div  className="App"> */}
       {/* Add your components here */}
       {/* <Sidebar /> */}
       {/* <Sidebar /> */}
-
       {/* <SidebarClass /> */}
       {/* <SidebarClass anchorOne="Snaps" anchorTwo="Friends" /> */}
-      <NavBarSimple name="Josh" />
-
+      {/* <NavBarSimple name="Josh" /> */}
+      {/* <EventsClass /> */}
+      {/* <EventsFunctional /> */}
+      {/* <ConditionalRenderingClass /> */}
+      {/* <ConditionalRenderingFunctional connected={true}/> */}
+      {/* <NestingComponents /> */}
+      {/* <MethodsAsPropsParent /> */}
+      <NavBarForm />
+    
     </div>
   );
 }
