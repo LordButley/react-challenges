@@ -1,5 +1,5 @@
 import React from "react";
-import css from "./css/NavBarSimple.module.css";
+import css from "./css/NavBarForm.module.css";
 import NavBarChild from "./NavBarChild";
 
 class NavBarForm extends React.Component{
@@ -7,13 +7,13 @@ class NavBarForm extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            isLoggedIn : true,
+            isLoggedIn : false,
 
         }
     }
 
     handleClick = () => {
-        this.setState((prevState, prevProps) => {
+        this.setState((prevState) => {
             return{
                 isLoggedIn: prevState.isLoggedIn === true ? false : true,
             }
@@ -26,7 +26,7 @@ class NavBarForm extends React.Component{
             <div class= {css.NavBar}>
                 <h1>My Gallery</h1>
             {this.state.isLoggedIn === true ?
-            <button onClick={this.handleClick}>Login</button> : 
+            <button onClick={this.handleClick}>Log out</button> : 
             <NavBarChild handleClick = {this.handleClick}/>
             // <form action={this.handleClick}>
             //     <label for="username">Username: </label>
