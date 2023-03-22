@@ -23,20 +23,13 @@ class NavBarForm extends React.Component{
 
     render (){
         return (
-            <div class= {css.NavBar}>
+            <div className= {css.NavBar}>
                 <h1>My Gallery</h1>
-            {this.state.isLoggedIn === true ?
-            <button onClick={this.handleClick}>Log out</button> : 
-            <NavBarChild handleClick = {this.handleClick}/>
-            // <form action={this.handleClick}>
-            //     <label for="username">Username: </label>
-            //     <input id="username" type="text" placeholder="username"/>
-            //     <label for="password">Password: </label>
-            //     <input id="password" type="password" placeholder="password"/>
+                <NavBarChild
+                isLoggedIn={this.state.isLoggedIn}
+                handleClick={this.handleButtonClick}
+                />
 
-            //     <button>Submit</button>
-            // </form>
-            }
             </div>
         );
     }
