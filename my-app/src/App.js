@@ -1,5 +1,5 @@
-import css from './App.module.css';
-import ControlledFormHooks from './components/ControlledFormHooks';
+import css from './App.css';
+import HTTPRequests from './components/HTTPRequests';
 
 function App() {
   return (
@@ -22,8 +22,10 @@ function App() {
       <Sidebar />
       <Content /> */}
       {/* <LifeCyclesCDM /> */}
-      <ControlledFormHooks />
-      
+      {/* <ControlledFormHooks /> */}
+      {/* <UseStateWithArrays /> */}
+      {/* <UseStateWithObjects /> */}
+      <HTTPRequests />
     </div>
   );
 }
