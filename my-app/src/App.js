@@ -1,7 +1,5 @@
 import css from './App.module.css';
-import NavBarForm from './components/NavBarForm';
-import Sidebar from './components/Sidebar';
-import Content from './components/Content';
+import ControlledFormHooks from './components/ControlledFormHooks';
 
 function App() {
   return (
@@ -20,10 +18,11 @@ function App() {
       {/* <MethodsAsPropsParent /> */}
       {/* <NavBarForm /> */}
       {/* <RenderingLists /> */}
-      <NavBarForm />
+      {/* <NavBarForm />
       <Sidebar />
-      <Content />
+      <Content /> */}
       {/* <LifeCyclesCDM /> */}
+      <ControlledFormHooks />
       
     </div>
   );

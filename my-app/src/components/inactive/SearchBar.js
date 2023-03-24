@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import importedNames from '../names'
 
-export class SearchBar3 extends Component {
+export class SearchBar extends Component {
     constructor(props) {
         super(props)
     
