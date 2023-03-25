@@ -1,5 +1,5 @@
 import css from './App.css';
-import HTTPRequests from './components/HTTPRequests';
+import HTTPPost from './components/HTTPPost';
 
 function App() {
   return (
@@ -25,7 +25,8 @@ function App() {
       {/* <ControlledFormHooks /> */}
       {/* <UseStateWithArrays /> */}
       {/* <UseStateWithObjects /> */}
-      <HTTPRequests />
+      {/* <HTTPRequests /> */}
+      <HTTPPost />
     </div>
   );
 }
